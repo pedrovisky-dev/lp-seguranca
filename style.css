@@ -1,0 +1,773 @@
+/* PALETA DE CORES
+   --azul-marinho: #0A1931;
+   --vermelho-vinho: #800020;
+   --branco: #FFFFFF;
+   --prata: #B0B0B0;
+*/
+
+/* ===========================
+   ESTILOS GERAIS E TIPOGRAFIA
+   =========================== */
+   :root {
+    --azul-marinho: #0A1931;
+    --vermelho-vinho: #800020;
+    --branco: #FFFFFF;
+    --prata: #B0B0B0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--azul-marinho);
+    line-height: 1.6;
+    background-color: #f8f8f8; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    color: var(--azul-marinho);
+}
+
+.white-text {
+    color: var(--branco);
+}
+
+.silver-text {
+    color: var(--prata);
+}
+
+/* ===========================
+   BOTÕES (CTA)
+   =========================== */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background-color: var(--vermelho-vinho);
+    color: var(--branco);
+}
+
+.btn-primary:hover {
+    background-color: #A00030; 
+    transform: translateY(-3px); 
+}
+
+.btn-large {
+    width: 100%; /* Centralizado em seção de CTA simples */
+    max-width: 500px;
+    font-size: 1.3em;
+    margin-top: 20px;
+    display: block; /* Garante que max-width funcione */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Efeito Pulse (Animação Chamativa) */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+}
+
+.hero-section .btn-primary {
+    animation: pulse 2s infinite; 
+}
+
+/* ===========================
+   1. HERO SECTION
+   =========================== */
+.hero-section {
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+    padding: 80px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.headline {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.sub-headline {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    color: var(--prata);
+    margin-bottom: 40px;
+    max-width: 600px;
+    /* Correção para centralização */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   2. SEÇÃO SERVIÇOS
+   =========================== */
+.services-section {
+    padding: 60px 0;
+    background-color: var(--branco);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: var(--vermelho-vinho);
+    padding: 15px 20px 10px;
+    font-size: 1.5em;
+}
+
+.service-card p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+}
+
+/* ===========================
+   3. SEÇÃO PROVA SOCIAL / TRUST
+   =========================== */
+.trust-section {
+    background-color: var(--vermelho-vinho);
+    padding: 60px 0;
+}
+
+.trust-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.trust-item {
+    text-align: center;
+    max-width: 250px;
+    padding: 20px;
+    color: var(--branco);
+}
+
+.trust-item i {
+    font-size: 3em;
+    color: var(--branco);
+    margin-bottom: 15px;
+}
+
+.trust-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* ===========================
+   NOVA SEÇÃO: CTA SIMPLES NO FINAL
+   =========================== */
+.simple-cta-section {
+    background-color: var(--azul-marinho);
+    padding: 60px 0 80px;
+    text-align: center;
+}
+
+.cta-whatsapp-final {
+    /* Garante que o CTA final seja ainda maior e destacado */
+    font-size: 1.5em; 
+    padding: 20px 40px;
+}
+
+
+/* ===========================
+   4. RODAPÉ
+   =========================== */
+.footer {
+    background-color: #050d18;
+    color: var(--prata);
+    padding: 20px 0;
+    font-size: 0.8em;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer a {
+    color: var(--prata);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--vermelho-vinho);
+}
+
+/* ===========================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   =========================== */
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.2em;
+    }
+    .sub-headline {
+        font-size: 1.2em;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .btn-large {
+        font-size: 1.2em;
+    }
+    .trust-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .trust-item {
+        max-width: 90%;
+    }
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 10px;
+        }
+
+        /* ===========================
+   NOVAS CORES
+   =========================== */
+:root {
+    --azul-marinho: #0A1931;
+    --vermelho-vinho: #800020;
+    --verde-intelbras: #008000; /* Novo verde para a parceria */
+    --branco: #FFFFFF;
+    --prata: #B0B0B0;
+}
+
+/* ===========================
+   BOTÃO SECUNDÁRIO (VERDE INTELBRAS)
+   =========================== */
+.btn-secondary {
+    background-color: var(--verde-intelbras);
+    color: var(--branco);
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.btn-secondary:hover {
+    background-color: #006400; /* Verde escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   4. SEÇÃO INTELBRAS (DESTAQUE VERDE)
+   =========================== */
+.intelbras-section {
+    background-color: #f0fdf0; /* Fundo muito claro, quase branco-esverdeado */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.intelbras-section .section-title {
+    color: var(--verde-intelbras); /* Título na cor verde */
+    margin-bottom: 50px;
+}
+
+.partner-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--branco);
+    border: 3px solid var(--verde-intelbras);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
+}
+
+.intelbras-logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.intelbras-headline {
+    color: var(--azul-marinho);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.partner-box p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Ajuste a largura da logo dentro do HTML se necessário, ou use o CSS acima (max-width: 180px) */
+}
+/* PALETA DE CORES
+   --azul-marinho: #0A1931;
+   --vermelho-vinho: #800020;
+   --verde-intelbras: #008000;
+   --branco: #FFFFFF;
+   --prata: #B0B0B0;
+*/
+
+/* ===========================
+   ESTILOS GERAIS E TIPOGRAFIA
+   =========================== */
+:root {
+    --azul-marinho: #0A1931;
+    --vermelho-vinho: #800020;
+    --verde-intelbras: #008000;
+    --branco: #FFFFFF;
+    --prata: #B0B0B0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--azul-marinho);
+    line-height: 1.6;
+    background-color: #f8f8f8; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    color: var(--azul-marinho);
+}
+
+.white-text {
+    color: var(--branco);
+}
+
+.silver-text {
+    color: var(--prata);
+}
+
+/* ===========================
+   BOTÕES (CTA)
+   =========================== */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* Botão Primário (Vermelho Vinho) */
+.btn-primary {
+    background-color: var(--vermelho-vinho);
+    color: var(--branco);
+}
+
+.btn-primary:hover {
+    background-color: #A00030; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-large {
+    width: 100%; 
+    max-width: 500px;
+    font-size: 1.3em;
+    margin-top: 20px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botão Secundário (Verde Intelbras) */
+.btn-secondary {
+    background-color: var(--verde-intelbras);
+    color: var(--branco);
+    padding: 12px 30px; /* Ajuste para melhor visual */
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 25px;
+    /* Estilo de sombra para destacar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:hover {
+    background-color: #006400; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito Pulse (Animação Chamativa) */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
+}
+
+.hero-section .btn-primary {
+    animation: pulse 2s infinite; 
+}
+
+/* ===========================
+   1. HERO SECTION
+   =========================== */
+.hero-section {
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+    padding: 80px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.headline {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.sub-headline {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    color: var(--prata);
+    margin-bottom: 40px;
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   2. SEÇÃO SERVIÇOS
+   =========================== */
+.services-section {
+    padding: 60px 0;
+    background-color: var(--branco);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: var(--vermelho-vinho);
+    padding: 15px 20px 10px;
+    font-size: 1.5em;
+}
+
+.service-card p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+}
+
+/* ===========================
+   3. SEÇÃO PROVA SOCIAL / TRUST
+   =========================== */
+.trust-section {
+    background-color: var(--vermelho-vinho);
+    padding: 60px 0;
+}
+
+.trust-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.trust-item {
+    text-align: center;
+    max-width: 250px;
+    padding: 20px;
+    color: var(--branco);
+}
+
+.trust-item i {
+    font-size: 3em;
+    color: var(--branco);
+    margin-bottom: 15px;
+}
+
+.trust-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* ===========================
+   4. SEÇÃO INTELBRAS (DESTAQUE VERDE)
+   =========================== */
+.intelbras-section {
+    background-color: #f0fdf0; 
+    padding: 60px 0;
+    text-align: center;
+}
+
+.intelbras-section .section-title {
+    color: var(--verde-intelbras); 
+    margin-bottom: 50px;
+}
+
+.partner-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--branco);
+    border: 3px solid var(--verde-intelbras);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
+}
+
+.intelbras-logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+    /* Centraliza a imagem inline */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intelbras-headline {
+    color: var(--azul-marinho);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.partner-box p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ===========================
+   5. SEÇÃO CTA SIMPLES NO FINAL
+   =========================== */
+.simple-cta-section {
+    background-color: var(--azul-marinho);
+    padding: 60px 0 80px;
+    text-align: center;
+}
+
+.cta-whatsapp-final {
+    font-size: 1.5em; 
+    padding: 20px 40px;
+}
+
+
+/* ===========================
+   6. RODAPÉ
+   =========================== */
+.footer {
+    background-color: #050d18;
+    color: var(--prata);
+    padding: 20px 0;
+    font-size: 0.8em;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer a {
+    color: var(--prata);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--vermelho-vinho);
+}
+
+/* ===========================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   =========================== */
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.2em;
+    }
+    .sub-headline {
+        font-size: 1.2em;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .btn-large {
+        font-size: 1.2em;
+    }
+    .trust-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .trust-item {
+        max-width: 90%;
+    }
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+    /* Diminui a logo Intelbras em telas menores */
+    .intelbras-logo {
+        max-width: 150px;
+    }
+}
