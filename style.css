@@ -40,19 +40,22 @@ html, body {
 .logo {
   text-align: center;
   margin-bottom: 20px;
-  width: 100%;
-  max-width: 100%;      /* nunca ultrapassa o contêiner pai */
-  overflow: hidden;     /* evita que a logo "vaze" */
-  flex-shrink: 1;       /* permite que encolha dentro do flex container */
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  width: auto;                  /* deixa a largura ser determinada pelo conteúdo */
+  max-width: 100%;              /* nunca ultrapassa o contêiner pai */
+  overflow: hidden;             /* corta qualquer excesso */
+  display: block;               /* evita conflitos com flex do hero */
+  margin-left: auto;
+  margin-right: auto;           /* centraliza a logo */
 }
 
 .logo-img {
-  width: 100%;                   /* ocupa a largura do contêiner pai */
-  max-width: clamp(50px, 25vw, 300px); /* responsiva, min 50px, max 300px */
+  width: 100%;
+  max-width: 200px;             /* ajuste final do tamanho da logo */
   height: auto;
+  object-fit: contain;          /* mantém proporção e não corta lateral */
   display: block;
+  margin-left: auto;
+  margin-right: auto;           /* centraliza horizontalmente */
 }
 
 
