@@ -1,401 +1,236 @@
-/* PALETA DE CORES
-   --azul-marinho: #0A1931;
-   --vermelho-vinho: #800020;
-   --verde-intelbras: #008000;
-   --branco: #FFFFFF;
-   --prata: #B0B0B0;
-*/
-
-/* ===========================
-   ESTILOS GERAIS E TIPOGRAFIA
-   =========================== */
-:root {
-    --azul-marinho: #0A1931;
-    --vermelho-vinho: #800020;
-    --verde-intelbras: #008000;
-    --branco: #FFFFFF;
-    --prata: #B0B0B0;
-}
-
+/* ===== RESET E BASE ===== */
 * {
-    margin: 0;
-    padding: 0;
-    /* ESSENCIAL: Garante que padding e border não aumentem a largura total do elemento */
-    box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--azul-marinho);
-    line-height: 1.6;
-    background-color: #f8f8f8;
-    
-    /* CORREÇÃO DEFINITIVA DE RESPONSIVIDADE: 
-       1. Impede a rolagem horizontal.
-       2. Define a largura do corpo como 100% da viewport (tela). */
-    overflow-x: hidden;
-    width: 100vw; 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #222;
 }
 
+/* ===== CONTAINERS ===== */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-h1, h2, h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-}
-
-.section-title {
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 40px;
-    padding-top: 20px;
-    color: var(--azul-marinho);
-}
-
-.white-text {
-    color: var(--branco);
-}
-
-.silver-text {
-    color: var(--prata);
-}
-
-/* ===========================
-   BOTÕES (CTA)
-   =========================== */
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
-}
-
-/* Botão Primário (Vermelho Vinho) */
-.btn-primary {
-    background-color: var(--vermelho-vinho);
-    color: var(--branco);
-}
-
-.btn-primary:hover {
-    background-color: #A00030; 
-    transform: translateY(-3px); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-large {
-    width: 100%; 
-    max-width: 500px;
-    font-size: 1.3em;
-    margin-top: 20px;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Botão Secundário (Verde Intelbras) */
-.btn-secondary {
-    background-color: var(--verde-intelbras);
-    color: var(--branco);
-    padding: 12px 30px; 
-    font-size: 1em;
-    font-weight: 700;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary:hover {
-    background-color: #006400; 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Efeito Pulse (Animação Chamativa) */
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(128, 0, 32, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
-}
-
-.hero-section .btn-primary {
-    animation: pulse 2s infinite; 
-}
-
-/* ===========================
-   1. HERO SECTION
-   =========================== */
+/* ===== HERO SECTION ===== */
 .hero-section {
-    background-color: var(--azul-marinho);
-    color: var(--branco);
-    padding: 80px 0;
-    text-align: center;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-}
-
-.hero-section .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #081b33;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .logo {
-    margin-bottom: 30px;
-    font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .logo-img {
-    height: 120px; 
-    max-width: 100%; 
-    width: auto;
+  max-width: 180px;
+  height: auto;
 }
 
-.headline {
-    font-size: 3em;
-    margin-bottom: 10px;
-    line-height: 1.1;
-}
-
-.sub-headline {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4em;
-    color: var(--prata);
-    margin-bottom: 40px;
-    max-width: 600px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
 }
 
 .hero-image img {
-    max-width: 100%; 
-    height: auto;
-    border-radius: 10px;
-    margin-top: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* ===========================
-   2. SEÇÃO SERVIÇOS
-   =========================== */
+/* ===== TEXTOS ===== */
+.headline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.sub-headline {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #a0001c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #cc0025;
+}
+
+.btn-secondary {
+  background-color: #081b33;
+  color: white;
+  border: 1px solid #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #122a4f;
+}
+
+/* ===== SERVICES SECTION ===== */
 .services-section {
-    padding: 60px 0;
-    background-color: var(--branco);
+  padding: 60px 0;
+  text-align: center;
 }
 
 .service-grid {
-    display: grid;
-    /* Alterado para que minmax seja mais flexível em mobile */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
 .service-card {
-    background-color: #fcfcfc;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .card-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
 }
 
-.service-card h3 {
-    color: var(--vermelho-vinho);
-    padding: 15px 20px 10px;
-    font-size: 1.5em;
-}
-
-.service-card p {
-    padding: 0 20px 20px;
-    font-size: 0.95em;
-}
-
-/* ===========================
-   3. SEÇÃO PROVA SOCIAL / TRUST
-   =========================== */
+/* ===== TRUST SECTION ===== */
 .trust-section {
-    background-color: var(--vermelho-vinho);
-    padding: 60px 0;
+  background-color: #081b33;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .trust-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.trust-item {
-    text-align: center;
-    max-width: 250px;
-    padding: 20px;
-    color: var(--branco);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .trust-item i {
-    font-size: 3em;
-    color: var(--branco);
-    margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #a0001c;
 }
 
-.trust-item h4 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-/* ===========================
-   4. SEÇÃO INTELBRAS (DESTAQUE VERDE)
-   =========================== */
+/* ===== INTELBRAS SECTION ===== */
 .intelbras-section {
-    background-color: #f0fdf0; 
-    padding: 60px 0;
-    text-align: center;
+  padding: 60px 0;
+  text-align: center;
 }
 
-.intelbras-section .section-title {
-    color: var(--verde-intelbras); 
-    margin-bottom: 50px;
+.partner-box img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.partner-box {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: var(--branco);
-    border: 3px solid var(--verde-intelbras);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
-}
-
-.intelbras-logo {
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 20px;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.intelbras-headline {
-    color: var(--azul-marinho);
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.partner-box p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #444;
-}
-
-/* ===========================
-   5. SEÇÃO CTA SIMPLES NO FINAL
-   =========================== */
+/* ===== CTA FINAL ===== */
 .simple-cta-section {
-    background-color: var(--azul-marinho);
-    padding: 60px 0 80px;
-    text-align: center;
+  background-color: #081b33;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.cta-whatsapp-final {
-    font-size: 1.5em; 
-    padding: 20px 40px;
-}
-
-
-/* ===========================
-   6. RODAPÉ
-   =========================== */
+/* ===== FOOTER ===== */
 .footer {
-    background-color: #050d18;
-    color: var(--prata);
-    padding: 20px 0;
-    font-size: 0.8em;
+  background-color: #040d1a;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
 }
 
-.footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer a {
-    color: var(--prata);
-    text-decoration: none;
-    margin-left: 10px;
+.social-links {
+  margin-top: 10px;
 }
 
 .social-icon {
-    font-size: 1.5em;
-    margin-left: 15px;
-    transition: color 0.3s;
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-    color: var(--vermelho-vinho);
+  color: #a0001c;
 }
 
-/* ===========================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   =========================== */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-    .headline {
-        font-size: 2.2em;
-    }
-    .sub-headline {
-        font-size: 1.2em;
-    }
-    .btn {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-    .btn-large {
-        font-size: 1.2em;
-    }
-    /* Força o grid de serviços a uma coluna única */
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-    .trust-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .trust-item {
-        max-width: 90%;
-    }
-    .footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .social-links {
-        margin-top: 10px;
-    }
-    /* Diminui a logo Intelbras em telas menores */
-    .intelbras-logo {
-        max-width: 150px;
-    }
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 10px;
+  }
+
+  .headline {
+    font-size: 1.8rem;
+  }
+
+  .sub-headline {
+    font-size: 0.95rem;
+  }
+
+  .service-card {
+    padding: 15px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1.5rem;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 }
