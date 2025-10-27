@@ -31,6 +31,7 @@ body {
     background-color: #f8f8f8;
     
     /* CORREÇÃO PRINCIPAL: Impede a rolagem horizontal indesejada */
+   body {
     overflow-x: hidden;
 }
 
@@ -386,3 +387,4 @@ h1, h2, h3 {
         max-width: 150px;
     }
 }
+
