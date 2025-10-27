@@ -30,9 +30,11 @@ body {
     line-height: 1.6;
     background-color: #f8f8f8;
     
-    /* CORREÇÃO PRINCIPAL: Impede a rolagem horizontal indesejada */
-   body {
+    /* CORREÇÃO DEFINITIVA DE RESPONSIVIDADE: 
+       1. Impede a rolagem horizontal.
+       2. Define a largura do corpo como 100% da viewport (tela). */
     overflow-x: hidden;
+    width: 100vw; 
 }
 
 .container {
@@ -156,6 +158,12 @@ h1, h2, h3 {
     font-size: 1.5em;
 }
 
+.logo-img {
+    height: 120px; 
+    max-width: 100%; 
+    width: auto;
+}
+
 .headline {
     font-size: 3em;
     margin-bottom: 10px;
@@ -174,7 +182,6 @@ h1, h2, h3 {
 }
 
 .hero-image img {
-    /* Garante que a imagem nunca ultrapasse a largura do container */
     max-width: 100%; 
     height: auto;
     border-radius: 10px;
@@ -192,7 +199,8 @@ h1, h2, h3 {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Alterado para que minmax seja mais flexível em mobile */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px;
 }
 
@@ -368,6 +376,10 @@ h1, h2, h3 {
     .btn-large {
         font-size: 1.2em;
     }
+    /* Força o grid de serviços a uma coluna única */
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
     .trust-grid {
         flex-direction: column;
         align-items: center;
@@ -387,4 +399,3 @@ h1, h2, h3 {
         max-width: 150px;
     }
 }
-
