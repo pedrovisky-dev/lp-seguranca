@@ -243,13 +243,13 @@ html, body {
 /* Ajuste somente em telas pequenas */
 @media (max-width: 768px) {
   .logo-img {
-    max-width: 130px; /* Reduz um pouco só no mobile */
+    max-width: 60px; /* Reduz um pouco só no mobile */
   }
 }
 
 @media (max-width: 480px) {
   .logo-img {
-    max-width: 110px; /* Em celulares muito pequenos */
+    max-width: 50px; /* Em celulares muito pequenos */
   }
 }
 
