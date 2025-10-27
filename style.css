@@ -39,17 +39,26 @@ html, body {
 .logo {
   text-align: center;
   margin-bottom: 20px;
-  overflow: hidden; /* evita que a logo "vaze" do contêiner */
+  width: 100%;        /* força ocupar somente a largura do contêiner pai */
+  max-width: 100%;    /* não ultrapassar o contêiner */
+  overflow: hidden;   /* corta qualquer excesso */
 }
 
 .logo-img {
-  width: clamp(50px, 15vw, 450px); 
+  width: clamp(50px, 15vw, 450px); /* responsiva */
   height: auto;
   display: inline-block;
+  max-width: 100%; /* garante que não ultrapasse a div logo */
 }
 
 
 /* ===== HERO CONTENT ===== */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+  }
+}
+
 .hero-content {
   flex: 1;
   min-width: 280px;
