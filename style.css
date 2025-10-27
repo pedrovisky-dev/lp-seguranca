@@ -36,20 +36,26 @@ html, body {
 }
 
 /* ===== LOGO ===== */
+
 .logo {
   text-align: center;
   margin-bottom: 20px;
-  width: 100%;        /* força ocupar somente a largura do contêiner pai */
-  max-width: 100%;    /* não ultrapassar o contêiner */
-  overflow: hidden;   /* corta qualquer excesso */
+  width: 100%;
+  max-width: 100%;      /* nunca ultrapassa o contêiner pai */
+  overflow: hidden;     /* evita que a logo "vaze" */
+  flex-shrink: 1;       /* permite que encolha dentro do flex container */
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
 }
 
 .logo-img {
-  width: clamp(50px, 15vw, 450px); /* responsiva */
+  width: 100%;                   /* ocupa a largura do contêiner pai */
+  max-width: clamp(50px, 25vw, 300px); /* responsiva, min 50px, max 300px */
   height: auto;
-  display: inline-block;
-  max-width: 100%; /* garante que não ultrapasse a div logo */
+  display: block;
 }
+
+
 
 
 /* ===== HERO CONTENT ===== */
