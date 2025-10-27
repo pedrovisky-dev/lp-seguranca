@@ -199,6 +199,7 @@ html, body {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+
   .hero-section {
     flex-direction: column;
     padding: 40px 10px;
@@ -232,5 +233,29 @@ html, body {
 
   .service-grid {
     grid-template-columns: 1fr;
+  }
+}
+.logo-img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* Ajuste somente em telas pequenas */
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 130px; /* Reduz um pouco só no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    max-width: 110px; /* Em celulares muito pequenos */
+  }
+}
+
+/* Aumenta a logo só no PC */
+@media (min-width: 1024px) {
+  .logo-img {
+    max-width: 450px; /* ajuste o valor até ficar ideal */
   }
 }
